@@ -17,4 +17,9 @@ export default styled.ul`
       margin: ${prop('childrenMargin','')};
     }
   `};
+  ${props => props.childrenPadding && css`
+    >li{
+      padding: ${prop('childrenPadding','')};
+    }
+  `};
 `;

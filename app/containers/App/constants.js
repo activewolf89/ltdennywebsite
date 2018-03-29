@@ -10,3 +10,5 @@
  */
 
 export const DEFAULT_LOCALE = 'en';
+export const HAMBURGER_CLICK = 'Website/App/HAMBURGER_CLICK';
+export const HAMBURGER_DETAIL_CLICK = 'Website/App/NAVIGATION_DETAIL_CLICK';

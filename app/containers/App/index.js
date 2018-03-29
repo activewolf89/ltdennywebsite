@@ -20,41 +20,62 @@ import Header from 'components/Header/Loadable';
 import NavigationBar from 'components/NavigationBar';
 import styled,{css} from 'styled-components';
 import { prop, ifProp, switchProp } from 'styled-tools';
+import { createStructuredSelector } from 'reselect';
 
+//redux
+import { connect } from 'react-redux';
+import { compose } from 'redux';
+import injectReducer from 'utils/injectReducer';
+import { withRouter } from 'react-router'
+import reducer from './reducer';
+
+import {handleHamburgerClick,handleHamburgerDetailClick} from './actions';
+import {makeSelectHamburger,makeSelectHamburgerDetail} from './selectors';
 //shared
 import Div from 'shared/Div';
-const BODY = styled(Div)`
-margin: 0 0 20px 0;
+const Body = styled(Div)`
   background-color: black;
   color: white;
-  @media screen and (min-width:768px){
-    margin: 0px;
-  }
 `
-const MobileViewDiv = styled(Div)`
-  position: fixed;
-  bottom: 0px;
-  display: block;
-  width: 100%;
-  z-index: 2;
-  @media screen and (min-width:768px){
-  display: none;
-  };
-`;
 //
-export default function App() {
-  return (
-    <Div position="relative">
-      <Header />
-      <BODY>
-      <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route component={NotFoundPage} />
-      </Switch>
-    </BODY>
-    <MobileViewDiv>
-      <NavigationBar />
-    </MobileViewDiv>
-    </Div>
-  );
+export class App extends React.PureComponent {
+  render(){
+    return (
+      <Div position="relative">
+        <Header
+          isHamburgerOpen = {this.props.isHamburgerOpen}
+          isHamburgerDetailOpen = {this.props.isHamburgerDetailOpen}
+          onHamburgerClick = {this.props.handleHamburgerClick}
+          onHamburgerDetailClick = {this.props.handleHamburgerDetailClick}
+
+        />
+        <NavigationBar />
+        <Body>
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route component={NotFoundPage} />
+        </Switch>
+      </Body>
+      </Div>
+    );
+  }
 }
+export function mapDispatchToProps(dispatch){
+  return {
+    handleHamburgerClick: () => dispatch(handleHamburgerClick()),
+    handleHamburgerDetailClick: (evt) => dispatch(handleHamburgerDetailClick(evt)),
+
+  }
+};
+const mapStateToProps = createStructuredSelector({
+  isHamburgerOpen: makeSelectHamburger(),
+  isHamburgerDetailOpen: makeSelectHamburgerDetail()
+
+});
+const withConnect = connect(mapStateToProps, mapDispatchToProps);
+const withReducer = injectReducer({ key: 'app', reducer });
+
+export default withRouter(compose(
+  withReducer,
+  withConnect,
+)(App));

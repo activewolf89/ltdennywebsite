@@ -16,12 +16,12 @@ import styled from 'styled-components';
 //shared --
 import Div from 'shared/Div';
 import GRIDCHILD from 'shared/GRIDCHILD';
-import Banner from './Sections/Banner.js';
-import Engagement from './Sections/Engagement.js';
-import WhatWeOffer from './Sections/WhatWeOffer.js';
-import Diamond from './Sections/Diamond.js';
-import WeddingBand from './Sections/WeddingBand.js';
-import FineJewelry from './Sections/FineJewelry.js';
+import Banner from 'components/Sections/Banner.js';
+import Engagement from 'components/Sections/Engagement.js';
+import WhatWeOffer from 'components/Sections/WhatWeOffer.js';
+import Diamond from 'components/Sections/Diamond.js';
+import WeddingBand from 'components/Sections/WeddingBand.js';
+import FineJewelry from 'components/Sections/FineJewelry.js';
 export default class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
 
