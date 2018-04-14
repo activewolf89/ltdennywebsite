@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import FontAwesome from 'react-fontAwesome';
 //shared
+import StyledLink from 'shared/StyledLink';
 import Input from 'shared/Input';
 import Button from 'shared/Button';
 import A from 'shared/A';
@@ -28,7 +29,6 @@ const GeneralUl = styled(Ul)`
 const GeneralLi = styled(Li)`
   padding: 10px 0;
   border-bottom: 1px solid gray;
-  cursor: pointer;
 `;
 const DetailTable = (props) =>{
   return (
@@ -37,30 +37,68 @@ const DetailTable = (props) =>{
       <GeneralLi >
         <Div display="flex" justifyContent="space-between" alignItems="center" flexWrap="no-wrap">
           <FontAwesome name="caret-left" size="2x" onClick={()=>{props.onHamburgerDetailClick('')}}/>
-          <A>
             <Title capitalize bold>
               {
                 props.isHamburgerDetailOpen.get('engagement') &&
-                'engagement'
+                <Title capitalize bold
+                  onClick={
+                  ()=>{
+                    props.onHamburgerDetailClick('engagement')
+                    props.onNavigationDirection('/engagement')
+                }}
+                  >engagement</Title>
               }
               {
                 props.isHamburgerDetailOpen.get('wedding') &&
-                'wedding'
+                <Title capitalize bold
+                  onClick={
+                  ()=>{
+                    props.onHamburgerDetailClick('wedding')
+                    props.onNavigationDirection('/wedding')
+                }}
+                  >wedding</Title>
               }
               {
                 props.isHamburgerDetailOpen.get('diamond') &&
-                'diamond'
+                <Title capitalize bold
+                  onClick={
+                  ()=>{
+                    props.onHamburgerDetailClick('diamond')
+                    props.onNavigationDirection('/diamond')
+                }}
+                  >diamond</Title>
               }
               {
                 props.isHamburgerDetailOpen.get('jewelry') &&
-                'jewelry'
+                <Title capitalize bold
+                  onClick={
+                  ()=>{
+                    props.onHamburgerDetailClick('jewelry')
+                    props.onNavigationDirection('/jewelry')
+                }}
+                  >jewelry</Title>
+              }
+              {
+                props.isHamburgerDetailOpen.get('service') &&
+                <Title capitalize bold
+                  onClick={
+                  ()=>{
+                    props.onHamburgerDetailClick('service')
+                    props.onNavigationDirection('/service')
+                }}
+                  >service</Title>
               }
               {
                 props.isHamburgerDetailOpen.get('about') &&
-                'about'
+                <Title capitalize bold
+                  onClick={
+                  ()=>{
+                    props.onHamburgerDetailClick('about')
+                    props.onNavigationDirection('/about')
+                }}
+                  >about</Title>
               }
             </Title>
-          </A>
           <A ></A>
         </Div>
       </GeneralLi>

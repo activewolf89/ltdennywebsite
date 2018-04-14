@@ -15,6 +15,8 @@ const SideContentDivParent = styled(Div)`
   height: 100%;
   margin: 0 10px;
   >ul:nth-child(1){
+    display: block;
+
     position: absolute;
     top:0px;
     z-index:2;
@@ -24,17 +26,22 @@ const SideContentDivParent = styled(Div)`
 
   }
   >ul:nth-child(2){
+    display: none;
+
     width: 0%;
     transition: width 500ms ease-in-out;
 
   }
   ${props => props.isHamburgerDetailOpen.get('toggle') && css`
   >ul:nth-child(1){
+    display: none;
     width: 0%;
     transition: width 500ms ease-in-out;
 
   }
   >ul:nth-child(2){
+    display: block;
+
     transition: width 500ms ease-in-out;
     width: 100%;
 
@@ -46,8 +53,8 @@ const SideContentDivParent = styled(Div)`
 const SideScreenContent = (props) =>{
   return (
     <SideContentDivParent isHamburgerDetailOpen={props.isHamburgerDetailOpen}>
-      <GeneralTab onHamburgerDetailClick ={props.onHamburgerDetailClick}/>
-      <DetailTab isHamburgerDetailOpen={props.isHamburgerDetailOpen} onHamburgerDetailClick ={props.onHamburgerDetailClick}/>
+      <GeneralTab onHamburgerDetailClick ={props.onHamburgerDetailClick} />
+      <DetailTab isHamburgerDetailOpen={props.isHamburgerDetailOpen} onNavigationDirection={props.onNavigationDirection} onHamburgerDetailClick ={props.onHamburgerDetailClick}/>
     </SideContentDivParent>
   )
 }

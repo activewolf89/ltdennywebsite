@@ -3,11 +3,10 @@ import PropTypes from 'prop-types';
 import styled,{css} from 'styled-components';
 //shared
 import Div from 'shared/Div';
-import {MobileOnlyDiv} from 'shared/MobileOnly';
 import SideScreenContent from './SideScreenContent';
 
 //------
-const SideNavigationDiv = styled(MobileOnlyDiv)`
+const SideNavigationDiv = styled(Div)`
 display: block;
 position: fixed;
 z-index: 2;
@@ -22,6 +21,10 @@ ${props => props.open && css`
 width: 85vw;
 transition: 3.5s;
 `}
+@media screen and (min-width:768px){
+  display: none;
+
+};
 `
 const SideNavigation = (props) =>{
   return (
@@ -29,6 +32,7 @@ const SideNavigation = (props) =>{
       <SideScreenContent
         isHamburgerDetailOpen = {props.isHamburgerDetailOpen}
         onHamburgerDetailClick = {props.onHamburgerDetailClick}
+        onNavigationDirection ={props.onNavigationDirection}
       />
     </SideNavigationDiv>
   )

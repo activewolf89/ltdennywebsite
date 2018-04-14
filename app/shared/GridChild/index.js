@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { prop, ifProp, switchProp } from 'styled-tools';
-import DIV from 'shared/Div';
-export default styled(DIV)`
+import Div from 'shared/Div';
+export default styled(Div)`
   grid-column-start: ${prop('columnStart','')};
   grid-column-end: ${prop('columnEnd','')};
   grid-row-start: ${prop('rowStart','')};

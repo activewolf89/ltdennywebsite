@@ -53,7 +53,7 @@ const store = configureStore(initialState, history);
 const MOUNT_NODE = document.getElementById('app');
 const theme = {
   BackgroundColor: '#7F7F7F',
-  ThemedColor: '#A2DBC2',
+  ThemedColor: 'teal',
   DarkColor: '#696969',
   LightColor: '#f5f5dc',
   ThemedFont: "Times New Roman"

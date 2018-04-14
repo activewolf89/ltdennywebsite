@@ -88,7 +88,6 @@ const WeddingDropDown = (props) =>{
             </Ul>
         </FlexColumn>
       </FlexParent>
-    <WeddingSection/>
   </Div>
   )
 }

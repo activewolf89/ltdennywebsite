@@ -9,33 +9,58 @@ import haloSemi from 'images/haloSemi.jpg';
 import roseGoldRing from 'images/roseGoldRing.png';
 import paveRing from 'images/paveRing.jpg';
 import ThreeStoneRing from 'images/ThreeStoneRing.jpg';
-
+import OwlCarousel from 'react-owl-carousel';
+import Div from 'shared/Div';
+import Title from 'shared/Title';
+import EngagementShop from 'components/Level2Details/Engagement/HomePage/EngagementShop';
+import CenterStone from 'components/Level2Details/Engagement/HomePage/CenterStone';
+import Custom from 'components/Level2Details/Engagement/HomePage/Custom';
+import EngagementRingGuide from 'components/Level2Details/Engagement/HomePage/EngagementRingGuide';
+import Insurance from 'components/Level2Details/Engagement/HomePage/Insurance';
+import EngagementTopProfile from 'components/Level2Details/Engagement/HomePage/EngagementTopProfile';
+import EngagementSideProfile from 'components/Level2Details/Engagement/HomePage/EngagementSideProfile';
+import Tacori from 'components/Level2Details/Engagement/HomePage/Tacori';
 //------
 
 const Engagement = () =>{
+  const HoverDiv = styled(Div)`
+    width: 300px;
+    height: 300px;
+      @media screen and (min-width:768px){
+        width: 400px;
+        height: 350px;
+      };
+
+  `
   return (
-    <HomepageRotation
-      mainTitle="Engagement Ring Details"
-      oneLargeImage={true}
-      image1={solitaire}
-      image1MainDescription="Solitaire"
-      image1SecondaryDescription="Shop our rings, read our two-cents ranging from synthetics to choosing the right ring"
-      image2={haloFull}
-      image2MainDescription="Dantella Halo"
-      image2SecondaryDescription="Find your matching band and something that fits well for him"
-      image3={haloSemi}
-      image3MainDescription="Full Bloom Halo"
-      image3SecondaryDescription="Browse our hand-picked selection and learn about the center-crown of your setting"
-      image4={roseGoldRing}
-      image4MainDescription="Rose-Gold Ring"
-      image4SecondaryDescription="Browse beautiful earrings hand-picked for you"
-      image5={paveRing}
-      image5MainDescription="Pave"
-      image5SecondaryDescription="Browse beautiful pave rings hand-picked for you"
-      image5={ThreeStoneRing}
-      image5MainDescription="Three Stone Ring"
-      image5SecondaryDescription="Browse beautiful pave rings hand-picked for you"
-     />
+    <Div display="flex" flexDirection='column' justifyContent='center' alignItems='center' padding="40px 0">
+      <Div margin="0 0 30px 0">
+      <Title bold>Engagement Ring Details</Title>
+    </Div>
+    <OwlCarousel margin={15} autoWidth>
+        <HoverDiv>
+          <EngagementShop />
+        </HoverDiv>
+        <HoverDiv>
+        <Tacori />
+      </HoverDiv>
+        <HoverDiv>
+        <CenterStone />
+      </HoverDiv>
+        <HoverDiv>
+          <Custom />
+        </HoverDiv>
+        <HoverDiv>
+          <EngagementRingGuide />
+        </HoverDiv>
+        <HoverDiv >
+          <EngagementTopProfile />
+        </HoverDiv>
+        <HoverDiv >
+          <EngagementSideProfile />
+        </HoverDiv>
+    </OwlCarousel>
+  </Div>
   )
 }
 Engagement.propTypes = {

@@ -16,6 +16,7 @@ export default styled.button`
   border-radius: ${prop('borderRadius','')};
   font-size: ${prop('fontSize','')};
   opacity: ${prop('opacity','')};
+
   ${props => props.themed && css`
     padding: 10px;
     background-color: ${props => props.theme.DarkColor};
@@ -24,8 +25,11 @@ export default styled.button`
     border-style: solid;
     :hover{
       background-color: ${props => props.theme.ThemedColor};
-      cursor: pointer;
     }
   `};
+  ${props => props.active && css`
+    background-color: ${props => props.theme.ThemedColor};
+
+  `}
 
 `

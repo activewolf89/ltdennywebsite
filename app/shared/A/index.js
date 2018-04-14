@@ -4,9 +4,11 @@ import { prop, ifProp, switchProp } from 'styled-tools';
 
 
 export default styled.a`
-  color:  ${prop('color','gray')};
+  color:  ${prop('color','blue')};
+  ${props => props.active && css`
+    color: ${props => props.theme.ThemedColor};
+`};
   :hover {
-    cursor: pointer;
     color: ${props => props.theme.ThemedColor};
   }
 `;

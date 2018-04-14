@@ -5,7 +5,6 @@ import FontAwesome from 'react-fontawesome';
 export default styled(FontAwesome)`
   color: gray;
   :hover {
-    cursor: pointer;
     color: ${props => props.theme.ThemedColor};
   }
 

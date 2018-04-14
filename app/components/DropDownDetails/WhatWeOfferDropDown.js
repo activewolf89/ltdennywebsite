@@ -69,7 +69,6 @@ const WhatWeOffer = (props) =>{
 
         </FlexColumn>
       </FlexParent>
-      <WhatWeOfferSection />
   </Div>
   )
 }

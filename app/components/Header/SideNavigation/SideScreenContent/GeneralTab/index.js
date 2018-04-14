@@ -19,13 +19,11 @@ const GeneralUl = styled(Ul)`
   display: flex;
   flex-direction: column;
   overflow:hidden;
-  ${props => props.open && css`
-`};
+
 `;
 const GeneralLi = styled(Li)`
   padding: 10px 0;
   border-bottom: 1px solid gray;
-  cursor: pointer;
 `;
 const GeneralTab = (props) =>{
   return (
@@ -51,6 +49,12 @@ const GeneralTab = (props) =>{
       <GeneralLi onClick={()=>{props.onHamburgerDetailClick('jewelry')}}>
           <Div display="flex" justifyContent="space-between" alignItems="center" flexWrap="no-wrap">
             <A >JEWELRY</A>
+            <FontAwesome name="caret-right" size="2x"/>
+          </Div>
+      </GeneralLi>
+      <GeneralLi onClick={()=>{props.onHamburgerDetailClick('service')}}>
+          <Div display="flex" justifyContent="space-between" alignItems="center" flexWrap="no-wrap">
+            <A >SERVICE</A>
             <FontAwesome name="caret-right" size="2x"/>
           </Div>
       </GeneralLi>

@@ -31,7 +31,6 @@ const HomePageRotation = (props) =>{
       {
         props.secondaryTitle &&
         <Title fontSize="14px" color="gray">{props.secondaryTitle}</Title>
-
       }
       <Div width="100%" overflow="hidden" >
         <OwlCarousel margin={15} items={1}  autoWidth>

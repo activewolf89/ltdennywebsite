@@ -67,7 +67,6 @@ const EngagementDropDown = (props) =>{
             </Ul>
         </FlexColumn>
       </FlexParent>
-    <EngagementSection/>
   </Div>
   )
 }

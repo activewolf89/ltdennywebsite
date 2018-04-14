@@ -17,18 +17,19 @@
 
 import {
   HAMBURGER_CLICK,
-  HAMBURGER_DETAIL_CLICK
+  HAMBURGER_DETAIL_CLICK,
 
 } from './constants';
 
 export function handleHamburgerClick(){
   return {
     type:HAMBURGER_CLICK,
+
   }
 }
 export function handleHamburgerDetailClick(evt){
   return {
     type:HAMBURGER_DETAIL_CLICK,
-    toggle: evt
+    toggle: evt,
   }
 }

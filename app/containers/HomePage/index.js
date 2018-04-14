@@ -28,8 +28,8 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
     return (
       <Div>
         <Banner />
-        <WhatWeOffer />
         <Engagement />
+        <WhatWeOffer />
         <Diamond />
         <WeddingBand />
         <FineJewelry />

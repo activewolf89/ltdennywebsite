@@ -6,8 +6,8 @@ import HomepageRotation from './HomePageRotation';
 import rbc from 'images/rbc.png';
 import fancyCuts from 'images/fancyCuts.jpg';
 import forevermarkLogo from 'images/forevermarkLogo.jpg';
-import syntheticVsNatural from 'images/syntheticVsNatural.jpg';
 import fourCs from 'images/fourCs.jpg';
+import syntheticVsNatural from 'images/syntheticVsNatural.jpg';
 //------
 
 const Diamond = () =>{

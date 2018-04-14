@@ -1,6 +1,7 @@
 {
   "name": "react-boilerplate",
   "version": "3.5.0",
+  "proxy": "http://localhost:500/",
   "description": "A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices",
   "repository": {
     "type": "git",
@@ -212,6 +213,7 @@
     "testRegex": "tests/.*\\.test\\.js$"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "babel-polyfill": "6.23.0",
     "chalk": "^1.1.3",
     "compression": "1.6.2",
@@ -220,12 +222,14 @@
     "fontfaceobserver": "2.0.9",
     "history": "4.6.3",
     "hoist-non-react-statics": "2.1.1",
+    "i": "^0.3.6",
     "immutable": "3.8.1",
     "intl": "1.2.5",
     "invariant": "2.2.2",
     "ip": "1.1.5",
     "lodash": "4.17.4",
     "minimist": "1.2.0",
+    "nodemon": "^1.17.3",
     "prop-types": "15.5.10",
     "react": "15.6.1",
     "react-dom": "15.6.1",
@@ -245,6 +249,7 @@
     "styled-components": "2.0.0",
     "styled-tools": "^0.4.0",
     "warning": "3.0.0",
+    "webpack-dev-server": "^3.1.3",
     "whatwg-fetch": "2.0.3"
   },
   "devDependencies": {
@@ -265,6 +270,7 @@
     "babel-preset-react": "6.24.1",
     "babel-preset-stage-0": "6.24.1",
     "circular-dependency-plugin": "3.0.0",
+    "concurrently": "^3.5.1",
     "coveralls": "2.13.1",
     "css-loader": "0.28.4",
     "enzyme": "2.8.2",

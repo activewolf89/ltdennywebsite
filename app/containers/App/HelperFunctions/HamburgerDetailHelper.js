@@ -15,9 +15,14 @@ export default function(hamburgerObject,trigger){
       if(key == trigger && value == false){
         newHamburgerObject[key] = true;
       }
+
     })
   }
   const returnedObject = Map(newHamburgerObject)
   return returnedObject
 
 };
+
+///key == engagement
+
+/// trigger === engagement

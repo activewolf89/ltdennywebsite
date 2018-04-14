@@ -89,7 +89,6 @@ const DiamondDropDown = (props) =>{
             </Ul>
         </FlexColumn>
       </FlexParent>
-    <DiamondSection/>
   </Div>
   )
 }

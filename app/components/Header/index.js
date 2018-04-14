@@ -26,17 +26,17 @@ class Header extends React.PureComponent { // eslint-disable-line react/prefer-s
     const ControlledHeaderUl = styled(Ul)`
       display: flex;
       position: sticky;
+      z-index: 4;
       top: 0px;
       border-bottom: 2px solid gray;
       background-color: white;
-      z-index: 3;
       justify-content: space-between;
       padding: 5px 0px;
       margin: 0px;
       @media screen and (min-width:768px){
         padding: 20px 5px;
-        position: static;
         justify-content: space-around;
+        position: static;
 
       };
     >li{
@@ -61,7 +61,7 @@ class Header extends React.PureComponent { // eslint-disable-line react/prefer-s
     `;
     return (
 
-      <ControlledHeaderUl padding="0px"  display="flex" alignItems="center" listStyle="none">
+      <ControlledHeaderUl padding="0px"  display="flex" alignItems="center" listStyle="none"  zIndex="3">
         <Ul margin="0px" padding="0px" display="flex" listStyle="none" childrenMargin="0 10px" justifyContent='center' alignItems='center'>
           <Li><A>206.682.5555</A></Li>
         <Li><ClickableFontAwesome name='envelope' size='2x' /></Li>
@@ -69,7 +69,7 @@ class Header extends React.PureComponent { // eslint-disable-line react/prefer-s
         <Li><ClickableFontAwesome name='calendar' size='2x' /></Li>
         <Li onClick={this.props.onHamburgerClick}><ClickableFontAwesome name='bars' size='2x' isHamburgerOpen={this.props.isHamburgerOpen}/></Li>
       </Ul>
-      <Li ><Title  bold>L T Denny Jewelers</Title></Li>
+      <Li onClick={()=>{this.props.onNavigationDirection('/')}}><Title  bold>L T Denny Jewelers</Title></Li>
       <Ul  margin="0px" padding="0px" display="flex" listStyle="none" childrenMargin="0 10px" justifyContent='center' alignItems='center'>
         <Li><ClickableFontAwesome name='search' size='2x' /></Li>
         <Li><ClickableFontAwesome name='user' size='2x' /></Li>
@@ -82,6 +82,7 @@ class Header extends React.PureComponent { // eslint-disable-line react/prefer-s
         isHamburgerDetailOpen = {this.props.isHamburgerDetailOpen}
         onHamburgerClick = {this.props.handleHamburgerClick}
         onHamburgerDetailClick = {this.props.onHamburgerDetailClick}
+        onNavigationDirection = {this.props.onNavigationDirection}
       />
       </ControlledHeaderUl>
 

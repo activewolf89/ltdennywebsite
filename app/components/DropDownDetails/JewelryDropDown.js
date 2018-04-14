@@ -98,7 +98,6 @@ const JewelryDropDown = (props) =>{
 
         </FlexColumn>
       </FlexParent>
-    <FineJewelrySection />
   </Div>
   )
 }
