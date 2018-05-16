@@ -15,7 +15,7 @@ const app = express();
 // If you need a backend, e.g. an API, add your custom backend-specific middleware here
 // app.use('/api', myApi);
 app.get('/test', function (req, res) {
-  console.log('getting hit')
+  console.log('getting h')
   res.send(axios({method:'get',url:'localhost:5000/test'}))
 });
 

@@ -64,6 +64,7 @@ const render = (messages) => {
       <LanguageProvider messages={messages}>
         <ThemeProvider theme={theme}>
           <ConnectedRouter history={history}>
+            
             <App />
           </ConnectedRouter>
         </ThemeProvider>

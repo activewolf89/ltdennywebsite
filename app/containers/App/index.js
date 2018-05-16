@@ -46,7 +46,6 @@ export class App extends React.PureComponent {
   render(){
     return (
       <Div position="relative">
-
         <Header
           isHamburgerOpen = {this.props.isHamburgerOpen}
           isHamburgerDetailOpen = {this.props.isHamburgerDetailOpen}
